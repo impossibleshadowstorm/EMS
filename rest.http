@@ -1,0 +1,40 @@
+### Home Route
+GET http://localhost:3000
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTUwMjk4MzgsImV4cCI6MTY5NTAzMDQzOCwiYXVkIjoiNjUwNzNkOTcyNTQxOGZmY2VmYjFiYjEyIiwiaXNzIjoiZW1zLmNvbSJ9.njJTyzZ9A3oKce1FlU_uW3ZSZpVUh3YWZMo6wPzQaCQ
+
+
+###Login Route
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "s320@gmail.com",
+  "password": "123456"
+}
+
+
+###Register Route
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "email": "s32000@gmail.com",
+  "password": "123456"
+}
+
+###Refresh token Route
+POST http://localhost:3000/auth/refresh-token
+Content-Type: application/json
+
+{
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTQ5Nzk0NDMsImV4cCI6MTcyNjUzNzA0MywiYXVkIjoiNjUwNzNkOTcyNTQxOGZmY2VmYjFiYjEyIiwiaXNzIjoiZW1zLmNvbSJ9.rmlCRdpb64o9T3Fn9WFmr7IXzdMhhNoL5hwtpqbqn_o"
+}
+
+###Logout Route
+DELETE http://localhost:3000/auth/logout
+Content-Type: application/json
+
+{
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTQ5ODA0MTIsImV4cCI6MTcyNjUzODAxMiwiYXVkIjoiNjUwNzNkOTcyNTQxOGZmY2VmYjFiYjEyIiwiaXNzIjoiZW1zLmNvbSJ9.Xscyy583thrJXMK4yUfFDE-3XOd8V_468ASLYNJ3J5w",
+  "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTQ5ODA0MTIsImV4cCI6MTY5NDk4MTAxMiwiYXVkIjoiNjUwNzNkOTcyNTQxOGZmY2VmYjFiYjEyIiwiaXNzIjoiZW1zLmNvbSJ9.GWBK3kGEV6pYBEG01UsRbpFv8bl5oT0b8veWD5iJ10g"
+}

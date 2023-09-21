@@ -1,0 +1,35 @@
+version: "3"
+services:
+  # Mongo Service
+  mongo_db:
+    container_name: db_container
+    image: mongo:latest
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: sumitsaurav1119
+      MONGO_INITDB_ROOT_PASSWORD: sumitsaurav1119
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo_data:/data/db
+
+  # Node API Service
+  api:
+    build: .
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      PORT: 3000
+      MONGODB_URI: "mongodb+srv://sumitsaurav1119:sumitsaurav1119@ems-cluster.hmlofke.mongodb.net/?retryWrites=true&w=majority"
+      DB_NAME: ems
+      NAME: SumitSaurav
+      ACCESS_TOKEN_SECRET: bcb2eec990a01177befe43351fb8e85a786ec704f6d3cb8270af8dea02b8826a950164464355ef832280f1ae0bd85f30b003a5727451c4808a3c1850af4a1301
+      REFRESH_TOKEN_SECRET: f6341132343760f3d89c260fbc12b1aa29346538734070a25b286b8882fbc3b6d86d0864244a8202ec8ab03fd1fef253ef518c8e1b53bdb2bd76ea09c48cd789
+    depends_on:
+      - mongo_db
+
+volumes:
+  mongo_data: {}
